@@ -1,0 +1,18 @@
+# Data (fetched at runtime, not committed)
+data/
+!data/.gitkeep
+
+# Caches
+.cache*/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+*.egg-info/
+
+# OS
+.DS_Store
