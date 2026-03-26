@@ -17,7 +17,6 @@ Do prediction market traders prefer YES tokens? We tested three hypotheses using
 ## Quickstart
 
 ```bash
-cd sprints/yes-bias/analysis
 pip install -r requirements.txt
 jupyter notebook
 ```
@@ -40,22 +39,18 @@ All data is on-chain and independently verifiable via [Polygonscan](https://poly
 ## Files
 
 ```
-analysis/
 ├── notebooks/
-│   ├── 01-data-collection.ipynb              # Fetch + cache trade data
-│   ├── 02-yes-bias-analysis.ipynb            # Core analysis (H1-H3 + framing)
-│   └── 03-single-market-resolution-analysis  # Population resolution rates
+│   ├── 01-data-collection.ipynb                # Fetch + cache data from Polymarket APIs
+│   ├── 02-yes-bias-analysis.ipynb              # Core analysis (H1-H3, framing, robustness)
+│   └── 03-single-market-resolution-analysis.ipynb  # Population-level resolution rates
 ├── src/
-│   ├── config.py                             # API endpoints, paths
-│   ├── fetch.py                              # Data fetching with caching
-│   └── analysis.py                           # Statistical analysis functions
-├── data/                                     # Cached parquet files (.gitignored)
-│   ├── trades_single_market.parquet          # 28,793 trades, 88 markets
-│   ├── trades_all.parquet                    # 714K trades, multi-market reference
-│   └── resolution_population.parquet         # 7,292 resolved single-market events
-├── output/                                   # Charts (committed)
-│   ├── 01-data-overview.png ... 18-*.png     # 18 analysis charts
-└── requirements.txt
+│   ├── config.py                               # API endpoints, paths
+│   ├── fetch.py                                # Data fetching with caching
+│   └── analysis.py                             # Statistical analysis functions
+├── data/                                       # Created at runtime by notebook 01 (.gitignored)
+├── ARCHITECTURE.md                             # How Polymarket's CTF Exchange works on-chain
+├── requirements.txt
+└── README.md
 ```
 
 ## Methodology
